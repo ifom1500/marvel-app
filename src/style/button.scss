@@ -58,7 +58,7 @@
                 transition: none;
             }
             &::after {
-                border-color: $grey transparent; 
+                border-color: $grey transparent;
                 transition: none;
             }
         }
@@ -87,5 +87,13 @@
     }
     &:hover {
         transform: translateY(-5px);
+    }
+    &:disabled {
+        filter: grayscale(100%);
+        &::after {
+            content: 'Загружаю';
+            font-size: 8px;
+            transition: all 500ms;
+        }
     }
 }
