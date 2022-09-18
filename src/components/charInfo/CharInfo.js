@@ -1,4 +1,5 @@
 import { Component } from 'react/cjs/react.production.min';
+import PropTypes from 'prop-types';
 
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
@@ -117,6 +118,11 @@ const View = ({ char }) => {
       </ul>
     </>
   );
+};
+
+// Пример использования PropTypes
+CharInfo.propTypes = {
+  charId: PropTypes.number,
 };
 
 export default CharInfo;
