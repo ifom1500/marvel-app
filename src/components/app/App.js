@@ -4,12 +4,13 @@ import RandomChar from '../randomChar/RandomChar';
 import CharList from '../charList/CharList';
 import CharInfo from '../charInfo/CharInfo';
 import ErrorBoundary from '../errorBoundary/ErrorBoundary';
+
 import decoration from '../../resources/img/vision.png';
 
 const App = () => {
   const [selectedChar, setChar] = useState(null);
 
-  const onSelectedChar = (id) => {
+  const onCharSelected = (id) => {
     setChar(id);
   };
 
@@ -22,7 +23,7 @@ const App = () => {
         </ErrorBoundary>
         <div className="char__content">
           <ErrorBoundary>
-            <CharList onSelectedChar={onSelectedChar} />
+            <CharList onCharSelected={onCharSelected} />
           </ErrorBoundary>
           <ErrorBoundary>
             <CharInfo charId={selectedChar} />

@@ -1,21 +1,21 @@
-import { Component } from 'react/cjs/react.development';
+import { Component } from 'react';
+import ErrorMessage from '../errorMessage/ErrorMessage';
 
 class ErrorBoundary extends Component {
   state = {
     error: false,
   };
 
-  // static getDerivedStateFromError(error) {
-  //   return { error: true };
-  // }
-
   componentDidCatch(error, errorInfo) {
-    this.setState({ error: true });
+    console.log(error, errorInfo);
+    this.setState({
+      error: true,
+    });
   }
 
   render() {
     if (this.state.error) {
-      return <h2>Произошла ошибка</h2>;
+      return <ErrorMessage />;
     }
 
     return this.props.children;
